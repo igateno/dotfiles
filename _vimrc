@@ -1,22 +1,43 @@
-" settings for vim
-syntax on
+" Isaac Gateno
+" This is my mac .vimrc file. There are many like it, but this one is mine.
+
+" colors
+set t_Co=256
+syntax enable
 set background=dark
-set ruler
-"colorscheme desert
-set expandtab
-set shiftwidth=2
-set smarttab
+colorscheme solarized
+
+" essentials
+syntax on
+set nocompatible
+set autoindent
+set modelines=0
+" set number
+" set relativenumber " decomment for relative line numbers
+set cursorline
+
+" tab settings
 set tabstop=2
-autocmd BufNewFile,BufRead *.json set ft=javascript
-set incsearch
-set hlsearch
-set laststatus=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+" searching
 set ignorecase
 set smartcase
-set linebreak
-set showbreak=~~
-autocmd BufWritePre * :%s/\s\+$//e
-set autoindent
-set colorcolumn=80
+set incsearch
+set showmatch
+set hlsearch
 
-autocmd FileType make setlocal noexpandtab
+" text
+set wrap
+if has("gui-running")
+  set cc=80
+endif
+
+" trim trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" status line
+set laststatus=2
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)

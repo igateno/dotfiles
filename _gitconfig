@@ -1,6 +1,6 @@
 [user]
-	name = Craig Fratrik
-	email = cfratrik@gmail.com
+	name = Isaac Gateño
+	email = isaac@gateno.net
 
 [alias]
     st = status
@@ -15,6 +15,3 @@
 
 [core]
     editor = vi
-
-[commit]
-    template = ~/arc/arcanist/resources/git/commit-template.txt
