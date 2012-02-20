@@ -1,5 +1,8 @@
 " Isaac Gateno
-" This is my mac .vimrc file. There are many like it, but this one is mine.
+" This is my .vimrc file. There are many like it, but this one is mine.
+
+" pathogen
+call pathogen#infect()
 
 " colors
 set t_Co=256
@@ -31,9 +34,15 @@ set hlsearch
 
 " text
 set wrap
-if has("gui-running")
+if exists('+colorcolumn')
   set cc=80
-endif
+else
+  highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+  match OverLength /\%79v.\+/
+end
+
+" gui
+set guioptions-=r
 
 " trim trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
